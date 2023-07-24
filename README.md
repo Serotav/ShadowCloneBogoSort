@@ -27,9 +27,9 @@ Welcome to the chaotic joy of ShadowCloneBogoSort. Enjoy the ride, and remember:
 Let's don the hat of 'science' for a moment, and delve into the brutal reality of the computational monstrosity that is the ShadowCloneBogoSort. Each time we select an array, swap two elements, and add both the original array and the swapped version to the queue, we're effectively increasing the number of arrays by one with each iteration. To illustrate this point, refer to the following schematic:
 
                                                           original array
-                                                      1° iteration: original array, 1_swapped
-                                                      2° iteration: 1_swapped, original array, 2_swapped
-                                                      3° iteration: original array, 2_swapped, 1_swapped, 1_1swapped
+                                              1° iteration: original array, 1_swapped
+                                              2° iteration: 1_swapped, original array, 2_swapped
+                                              3° iteration: original array, 2_swapped, 1_swapped, 1_1swapped
 
 Computationally speaking, as we need to go through a staggering number of combinations before hitting the jackpot (the sorted array), the more elements in the array, the more combinations to test. With each increase in the array size by one, we amplify the number of possible permutations by (n-1)*n. Consequently, the time complexity to obtain the sorted permutation, given n elements in the array, skyrockets to O(n!).
 
