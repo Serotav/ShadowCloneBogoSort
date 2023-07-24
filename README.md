@@ -26,10 +26,10 @@ Welcome to the chaotic joy of ShadowCloneBogoSort. Enjoy the ride, and remember:
 ## So, Just How Epicly Inefficient Is This?
 Let's don the hat of 'science' for a moment, and delve into the brutal reality of the computational monstrosity that is the ShadowCloneBogoSort. Each time we select an array, swap two elements, and add both the original array and the swapped version to the queue, we're effectively increasing the number of arrays by one with each iteration. To illustrate this point, refer to the following schematic:
 
-                                                          original array
-                                              1° iteration: original array, 1_swapped
-                                              2° iteration: 1_swapped, original array, 2_swapped
-                                              3° iteration: original array, 2_swapped, 1_swapped, 1_1swapped
+  original array
+1° iteration: original array, 1_swapped
+2° iteration: 1_swapped, original array, 2_swapped
+3° iteration: original array, 2_swapped, 1_swapped, 1_1swapped
 
 Computationally speaking, as we need to go through a staggering number of combinations before hitting the jackpot (the sorted array), the more elements in the array, the more combinations to test. With each increase in the array size by one, we amplify the number of possible permutations by (n-1)*n. Consequently, the time complexity to obtain the sorted permutation, given n elements in the array, skyrockets to O(n!).
 
@@ -37,9 +37,9 @@ But wait, there's more! If we're increasing the number of arrays with each itera
 
 However, you might be thinking: "Surely, it can't be that bad? At the end of the day, we're still getting a sorted array, right?" Let's put this into perspective. Suppose we have an array of chars where each element takes up just one byte of memory. For an array of 5 elements, we'd be using 5 bytes - a modest amount. Given our earlier calculated complexity, on average, it would take approximately 120 iterations to obtain the sorted version. That results in 120 * 5 = 600 bytes used to store these arrays.
 
-But what happens when our array has 10 elements? Just 5 more, no big deal, right? Well, let's crunch those numbers again. For 10 elements, we have 10! or about 3,628,800 possible permutations. This would consume a whopping ~3.4 MB of memory just for the arrays. That's a 1000-fold increase in memory usage for a mere addition of 5 elements!
+But what happens when our array has 10 elements? Just 5 more, no big deal, right? Well, let's crunch those numbers again. For 10 elements, we have 10! or about 3,628,800 possible permutations. This would consume a whopping ~34 MB of memory just for the arrays. That's a 10000-fold increase in memory usage for a mere addition of 5 elements!
 
-Now let's really push the boat out. What if we want to sort 1000 elements? That gives us 1000! permutations, which translates to ~4e2567 bytes or an utterly absurd 3.6e2555 terabytes! You'd need either a Chuck Norris-level stroke of luck or a reliable source to download some extra RAM from the Internet to tackle that one.
+Now let's really push the boat out. What if we want to sort 1000 elements? That gives us 1000! permutations, which translates to ~4e2570 bytes or an utterly absurd 3.6e2558 terabytes! You'd need either a Chuck Norris-level stroke of luck or a reliable source to download some extra RAM from the Internet to tackle that one.
 
 In conclusion, with this next-level dumpster fire of an algorithm, sorting literally anything would be a Herculean task. But hey, don't just take my word for it. I've left a C++ implementation here for you to experience the exhilarating pain of multiplying arrays and surrendering your precious RAM to the shadows. Enjoy!
 
